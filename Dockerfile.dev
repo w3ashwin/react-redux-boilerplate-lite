@@ -1,0 +1,11 @@
+FROM node:8.9.4
+
+# Set up working directory
+ENV APP_HOME=/webpack-boilerplate
+RUN mkdir $APP_HOME
+WORKDIR $APP_HOME
+
+ADD . $APP_HOME
+
+# Install node module packages
+#RUN yarn install

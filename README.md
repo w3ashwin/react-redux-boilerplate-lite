@@ -22,3 +22,28 @@ Build the current application
 ```sh
 $ yarn build
 ```
+
+## Building web app in docker
+Build using docker
+```sh
+$ docker-compose build web
+```
+
+## Running in docker
+Running web-app using docker
+```sh
+$ docker-compose up web
+```
+
+## Docker terminal commands
+Running docker terminal commands
+```sh
+$ docker-compose run --rm web yarn <script>
+```
+
+## Getting into container
+Getting into container
+```sh
+$ docker-compose run --rm web bash
+```
+

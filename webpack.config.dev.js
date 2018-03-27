@@ -8,11 +8,12 @@ module.exports = merge(webpackConfig, {
     devServer: {
         contentBase: path.join(__dirname, "dist"),
         compress: true,
-        port: 8080,
+        host: '0.0.0.0',
+        port: parseInt(`${process.env.DEV_PORT}`) || 8081,
         hot: true,
         watchContentBase: false,
         historyApiFallback: true,
-        // stats: 'errors-only',
+        stats: 'errors-only',
         open: true,
         openPage: ''
         //Do something before app loads on a route
