@@ -21,14 +21,9 @@ module.exports = {
         vendor: Object.keys(package.dependencies),
         bundle: path.join(dirApp, 'index')
     },
-    output: {
-        path: path.join(__dirname, '../dist'),
-        filename: '[name].[hash].js',
-        chunkFilename: '[name].[hash].js',
-        publicPath: '/',
-    },
     optimization: {
         splitChunks: {
+            name: false,
             cacheGroups: {
                 vendor: {
                     chunks: 'initial',
