@@ -13,7 +13,7 @@ module.exports = merge(webpackConfig, {
         hot: true,
         watchContentBase: false,
         historyApiFallback: true,
-        stats: 'errors-only',
+        // stats: 'errors-only',
         open: true,
         openPage: ''
         //Do something before app loads on a route

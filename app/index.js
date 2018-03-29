@@ -10,6 +10,7 @@ import store from "./store/index";
 import { BrowserRouter } from 'react-router-dom';
 
 import App from "./components/App/index";
+import 'bootstrap/dist/css/bootstrap.css'
 
 
 if (module.hot) {

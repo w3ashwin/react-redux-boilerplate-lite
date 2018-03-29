@@ -92,6 +92,14 @@ module.exports = {
             disable: IS_DEV,
             allChunks: true,
             ignoreOrder: false
+        }),
+
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery",
+            "window.Tether": 'tether',
+            Tether: 'tether'
         })
     ],
     module: {
@@ -142,15 +150,44 @@ module.exports = {
             // },
 
             {
-                test: /\.scss$/,
-                use: [{
-                    loader: "style-loader" // creates style nodes from JS strings
-                }, {
-                    loader: "css-loader" // translates CSS into CommonJS
-                }, {
-                    loader: "sass-loader" // compiles Sass to CSS
-                }]
+                test: /\.(scss)$/,
+                use: [
+                    {
+                        // Adds CSS to the DOM by injecting a `<style>` tag
+                        loader: 'style-loader'
+                    },
+                    {
+                        // Interprets `@import` and `url()` like `import/require()` and will resolve them
+                        loader: 'css-loader'
+                    },
+                    {
+                        // Loader for webpack to process CSS with PostCSS
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: function () {
+                                return [
+                                    require('autoprefixer')
+                                ];
+                            }
+                        }
+                    },
+                    {
+                        // Loads a SASS/SCSS file and compiles it to CSS
+                        loader: 'sass-loader'
+                    }
+                ]
             },
+
+            // {
+            //     test: /\.scss$/,
+            //     use: [{
+            //         loader: "style-loader" // creates style nodes from JS strings
+            //     }, {
+            //         loader: "css-loader" // translates CSS into CommonJS
+            //     }, {
+            //         loader: "sass-loader" // compiles Sass to CSS
+            //     }]
+            // },
             // IMAGES
             {
                 test: /\.(jpg|png|gif)$/,
