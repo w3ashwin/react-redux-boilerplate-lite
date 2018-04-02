@@ -15,7 +15,7 @@ $ yarn install
 ## Development
 Run the local webpack-dev-server with livereload and autocompile on [http://localhost:8080/](http://localhost:8080/)
 ```sh
-$ yarn start
+$ yarn dev
 ```
 ## Deployment
 Build the current application
@@ -23,6 +23,11 @@ Build the current application
 $ yarn build
 ```
 
+## Stats
+Check the stats of the bundle
+```sh
+$ yarn stats
+```
 ## Building web app in docker
 Build using docker
 ```sh
