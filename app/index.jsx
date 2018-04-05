@@ -5,12 +5,12 @@
 // Load application styles
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from "react-redux";
-import store from "./store/index";
 import { BrowserRouter } from 'react-router-dom';
-
-import App from "./components/App/index";
-import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap.css';
+import { Provider } from 'react-redux';
+import store from './store/index';
+// import App from './components/App/index.js';
+import App from './components/App/index';
 
 
 if (module.hot) {
@@ -23,5 +23,5 @@ ReactDOM.render(
       <App />
     </BrowserRouter>
   </Provider>,
-  document.getElementById("app")
+  document.getElementById('app'),
 );

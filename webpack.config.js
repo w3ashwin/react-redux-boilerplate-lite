@@ -19,11 +19,20 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     entry: {
         vendor: Object.keys(package.dependencies),
-        bundle: path.join(dirApp, 'index')
+        bundle: path.join(dirApp, 'index.jsx')
+    },
+    resolve: {
+        extensions: ['.js', '.jsx'],
+        modules: [
+            dirNode,
+            dirApp,
+            dirAssets
+        ] 
     },
     optimization: {
         splitChunks: {
             name: false,
+            chunks: "async",
             cacheGroups: {
                 vendor: {
                     chunks: 'initial',
@@ -34,13 +43,6 @@ module.exports = {
             }
         },
         runtimeChunk: true
-    },
-    resolve: {
-        modules: [
-            dirNode,
-            dirApp,
-            dirAssets
-        ]
     },
     plugins: [
         new webpack.DefinePlugin({
@@ -106,12 +108,9 @@ module.exports = {
         rules: [
             // BABEL
             {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: /(node_modules)/,
-                options: {
-                    compact: true
-                }
+                test: /\.(js|jsx)$/,
+                use: ['babel-loader', 'eslint-loader'],
+                exclude: /(node_modules)/
             },
 
             // STYLES

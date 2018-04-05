@@ -1,6 +1,4 @@
-import React from "react";
-import List from "../List/index";
-import Form from "../Form/index";
+import React from 'react';
 import AppNavSection from '../Navigation/index';
 import AppSection from '../Routes/index';
 import AppFooterSection from '../Footer/index';

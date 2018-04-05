@@ -6,20 +6,24 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --config webpack.config.dev.js --mode development",
     "build": "webpack -p --progress --mode production --config webpack.config.build.js",
-    "stats": "webpack --profile --json > stats.json"
+    "stats": "webpack --profile --json > stats.json",
+    "lint": "eslint --fix app/components/Navigation/index.jsx",
+    "postdev": "npm run lint"
   },
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
     "jquery": "^3.3.1",
     "lodash": "^4.17.5",
     "popper.js": "1.12.3",
+    "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-hot-loader": "^4.0.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
-    "tether": "^1.4.3"
+    "tether": "^1.4.3",
+    "uuid": "^3.2.1"
   },
   "devDependencies": {
     "autoprefixer": "^8.2.0",
@@ -32,6 +36,12 @@
     "clean-webpack-plugin": "^0.1.19",
     "cross-env": "^5.1.4",
     "css-loader": "^0.28.11",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
     "exports-loader": "^0.7.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",

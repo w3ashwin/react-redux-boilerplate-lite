@@ -1,10 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-const mapStateToProps = state => {
-  return { articles: state.articles };
-};
+const mapStateToProps = state => ({ articles: state.articles });
 
 const ConnectedList = ({ articles }) => (
   <ul className="list-group list-group-flush">
@@ -18,8 +16,12 @@ const ConnectedList = ({ articles }) => (
 
 const List = connect(mapStateToProps)(ConnectedList);
 
+ConnectedList.defaultProps = {
+  articles: [],
+};
+
 ConnectedList.propTypes = {
-  articles: PropTypes.array.isRequired
+  articles: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default List;
