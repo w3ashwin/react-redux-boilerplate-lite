@@ -9,7 +9,7 @@ module.exports = merge(webpackConfig, {
     path: path.join(__dirname, 'dist'),
     filename: '[name].[hash].js',
     chunkFilename: '[name].[hash].js',
-    publicPath: './',
+    publicPath: '/',
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),

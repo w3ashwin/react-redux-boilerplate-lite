@@ -1,5 +1,6 @@
 {
     "extends": "airbnb",
+    "parser": "babel-eslint",
     "plugins": [
         "react",
         "jsx-a11y",
@@ -13,7 +14,8 @@
             "error",
             {
                 "allow": [
-                    "__REDUX_DEVTOOLS_EXTENSION__"
+                    "__REDUX_DEVTOOLS_EXTENSION__",
+                    "__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"
                 ]
             }
         ],
@@ -66,5 +68,5 @@
                 "allowChildren": false
             }
         ]
-    }    
+    }
 }
