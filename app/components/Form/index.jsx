@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import uuidv1 from 'uuid';
-import addArticle from '../../actions/index';
+import { addArticle } from '../../actions/article';
 
 const mapDispatchToProps = dispatch => ({
   addArticle: article => dispatch(addArticle(article)),
@@ -11,26 +11,22 @@ const mapDispatchToProps = dispatch => ({
 class ConnectedForm extends Component {
   constructor() {
     super();
-
     this.state = {
       title: '',
     };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState({ [event.target.id]: event.target.value });
-  }
+  };
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
     const { title } = this.state;
     const id = uuidv1();
     this.props.addArticle({ title, id });
     this.setState({ title: '' });
-  }
+  };
 
   render() {
     const { title } = this.state;
