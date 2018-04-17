@@ -21,13 +21,16 @@ module.exports = {
         vendor: Object.keys(package.dependencies),
         bundle: path.join(dirApp, 'index.jsx')
     },
-    resolve: {
+	output: {
+		publicPath: "/"
+	},
+	resolve: {
         extensions: ['.js', '.jsx'],
         modules: [
             dirNode,
             dirApp,
             dirAssets
-        ] 
+        ]
     },
     optimization: {
         splitChunks: {
@@ -220,7 +223,7 @@ module.exports = {
                 test: /\.(eot|svg|otf|ttf|woff|woff2)$/,
                 use: 'file-loader',
             },
-            
+
             //Static HTML
             {
                 test: /\.html$/,
