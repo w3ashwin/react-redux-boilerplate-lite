@@ -1,10 +1,12 @@
+[![Known Vulnerabilities](https://snyk.io/test/github/w3ashwin/react-redux-boilerplate-lite/badge.svg?targetFile=package.json)](https://snyk.io/test/github/w3ashwin/react-redux-boilerplate-lite?targetFile=package.json)
+
 Webpack 4 Boilerplate
 ===========
 
 > Webpack 4 boilerplate with Babel, SASS, React 16.2, React router v4 on board
 
 ## Requirements
-You only need <b>node.js</b> pre-installed and you’re good to go. 
+You only need <b>node.js</b> pre-installed and you’re good to go.
 
 ## Setup
 Install dependencies
