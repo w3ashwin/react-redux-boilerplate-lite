@@ -1,5 +1,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/w3ashwin/react-redux-boilerplate-lite/badge.svg?targetFile=package.json)](https://snyk.io/test/github/w3ashwin/react-redux-boilerplate-lite?targetFile=package.json)
 
+[![Build Status](https://travis-ci.org/w3ashwin/react-redux-boilerplate-lite.svg?branch=master)](https://travis-ci.org/w3ashwin/react-redux-boilerplate-lite)
+
 Webpack 4 Boilerplate
 ===========
 
