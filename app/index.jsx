@@ -8,14 +8,17 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Provider } from 'react-redux';
+import 'babel-polyfill';
 import store from './store/index';
-// import App from './components/App/index.js';
+import setupAxiosInterceptors from './globals/interceptors';
 import App from './components/App/index';
 
 
 if (module.hot) {
   module.hot.accept();
 }
+
+setupAxiosInterceptors(store);
 
 ReactDOM.render(
   <Provider store={store}>
