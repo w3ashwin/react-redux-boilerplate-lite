@@ -4,5 +4,5 @@ import demoReducer from './repoReducer';
 
 export default combineReducers({
   articles: articleReducer,
-  demo: demoReducer,
+  demo: demoReducer
 });

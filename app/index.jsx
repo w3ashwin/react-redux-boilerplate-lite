@@ -13,7 +13,6 @@ import store from './store/index';
 import setupAxiosInterceptors from './globals/interceptors';
 import App from './components/App/index';
 
-
 if (module.hot) {
   module.hot.accept();
 }

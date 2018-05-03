@@ -1,0 +1,208 @@
+$breakpoints: ( 'phone': 320px, 'tablet': 768px, 'desktop': 1024px, 'desktop-big':1440px) !default;
+
+// Media Queries in Sass
+$mobile-large:425px !default;
+$mob-tab-break-min:425px !default;
+$mob-tab-break-max:600px !default;
+$mobile-medium:375px !default;
+$mobile-small:320px !default;
+$tablet:768px !default;
+$laptop: 1024px !default;
+$large-laptop: 1440px !default;
+$desktop:2440px !default;
+$mobile-portrait: 320px !default;
+$mobile-landscape: 480px !default;
+$tablet-portrait: 768px !default;
+$tablet-landscape: 980px !default;
+
+/** Example: Can be used to find which media, that a screen falls in
+@include mobile-only {
+    background: $white;
+}
+@include mobile-small {
+    background: yellowgreen;
+}
+@include mobile-medium {
+    background: fuchsia;
+}
+@include mobile-tab-break {
+    background: green !important;
+}
+@include mobile-large {
+    background: hotpink;
+}		
+@include tablet-only {
+    background: orange;
+}
+@include laptop-only {
+    background: blue;
+}
+@include largelaptop-only {
+    background: red;
+}
+@include desktop-only {
+    background: dimgrey;
+}
+@include large-screens {
+    background: aqua;
+} **/
+
+// ------------------------------   
+// mobile
+// Both portrait and landscape
+// ------------------------------
+@mixin mobile-only {
+    @media only screen and (max-width: $mobile-large) {
+        @content;
+    }
+}
+// for small mobiles
+@mixin mobile-small {
+    @media only screen and (min-width: 1px) and (max-width: $mobile-small) {
+        @content;
+    }
+}
+
+// For medium mobiles
+@mixin mobile-medium {
+    @media only screen and (min-width: $mobile-small + 1) and (max-width: $mobile-medium) {
+        @content;
+    }
+}
+
+// for larger mobiles
+@mixin mobile-large {
+    @media only screen and (min-width: $mobile-medium + 1) and (max-width: $mobile-large) {
+        @content;
+    }
+}
+
+@mixin mobile-tab-break {
+    @media only screen and (min-width: $mob-tab-break-min + 1) and (max-width: $mob-tab-break-max) {
+        @content;
+    }
+}
+
+// tablet
+// Both the portrait and landscape width of the tablet
+// Larger than a landscape mobile but less than or equal to a landscape tablet
+@mixin tablet-only {
+    @media only screen and (min-width: $mobile-large + 1) and (max-width: $tablet) {
+        @content;
+    }
+}
+
+// For Laptop only
+@mixin laptop-only {
+    @media only screen and (min-width: $tablet + 1) and (max-width: $laptop) {
+        @content;
+    }
+}
+
+// For Desktop Only
+@mixin desktop-only {
+    @media only screen and (min-width: $laptop + 1) and (max-width: $desktop) {
+        @content;
+    }
+}
+
+// For Desktop Only
+@mixin largelaptop-only {
+    @media only screen and (min-width: $laptop + 1) and (max-width: $large-laptop) {
+        @content;
+    }
+}
+
+// For Large-Screens
+@mixin large-screens {
+    @media only screen and (min-width: $desktop + 1) {}
+    @content;
+}
+
+
+
+
+// Everything up to and including the portrait width of the phone
+// Since it's the smallest query it doesn't need a min
+@mixin mobile-portrait-only {
+    @media only screen and (max-width: $mobile-portrait) {
+        @content;
+    }
+}
+
+// Everything up to and including the mobile portrait
+@mixin mobile-portrait-and-below {
+    @media only screen and (max-width: $mobile-portrait) {
+        @content;
+    }
+}
+
+// Everything above and including the mobile portrait
+@mixin mobile-portrait-and-up {
+    @media only screen and (min-width: $mobile-portrait) {
+        @content;
+    }
+}
+
+// Everthing larger than a portrait mobile up until mobile landscape
+@mixin mobile-landscape-only {
+    @media only screen and (min-width: $mobile-portrait + 1) and (max-width: $mobile-landscape) {
+        @content;
+    }
+}
+
+// Everything up to and including the mobile landscape width
+@mixin mobile-landscape-and-below {
+    @media only screen and (max-width: $mobile-landscape) {
+        @content;
+    }
+}
+
+// Everything above and including the mobile landscape width
+@mixin mobile-landscape-and-up {
+    @media only screen and (min-width: $mobile-portrait + 1) {
+        @content;
+    }
+}
+
+// Everything larger than mobile landscape up until the portrait width of the tablet
+@mixin tablet-portrait-only {
+    @media only screen and (min-width: $mobile-landscape + 1) and (max-width: $tablet-portrait) {
+        @content;
+    }
+}
+
+// Everything below and including the portrait width of the tablet
+@mixin tablet-portrait-and-below {
+    @media only screen and (max-width: $tablet-portrait) {
+        @content;
+    }
+}
+
+// Everything above and including the portrait width of the tablet
+@mixin tablet-portrait-and-up {
+    @media only screen and (min-width: $mobile-landscape + 1) {
+        @content;
+    }
+}
+
+// Larger than portrait but less than or equal to the landscape width
+@mixin tablet-landscape-only {
+    @media only screen and (min-width: $tablet-portrait + 1) and (max-width: $tablet-landscape) {
+        @content;
+    }
+}
+
+// Up to and including the tablet landscape
+@mixin tablet-landscape-and-below {
+    @media only screen and (max-width: $tablet-landscape) {
+        @content;
+    }
+}
+
+// Everything larger than portrait tablet
+@mixin tablet-landscape-and-up {
+    @media only screen and (min-width: $tablet-portrait + 1) {
+        @content;
+    }
+}

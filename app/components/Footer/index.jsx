@@ -3,7 +3,7 @@ import '../../../assets/styles/components/Footer.scss';
 
 const Footer = () => (
   <footer>
-    Footer section
+    Simple React Boilerplate
   </footer>
 );
 

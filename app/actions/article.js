@@ -1,8 +1,8 @@
 const addArticle = article => ({
   type: 'ADD_ARTICLE',
-  payload: article,
+  payload: article
 });
 
 export default {
-  addArticle,
+  addArticle
 };

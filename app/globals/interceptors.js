@@ -3,7 +3,7 @@ import ApiError from './ApiError';
 import ERRORS from './errorConstants';
 
 // eslint-disable-next-line no-unused-vars
-const setupInterceptors = (store) => {
+const setupInterceptors = store => {
   // Default settings for axios request
   axios.defaults.baseURL = 'https://api.example.com';
   axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -14,7 +14,7 @@ const setupInterceptors = (store) => {
     , error => Promise.reject(error),
   );
 
-  axios.interceptors.response.use((response) => {
+  axios.interceptors.response.use(response => {
     // Process response body
     // use store.dispatch() to dispatch any redux actions
     if (response.status >= 500) {

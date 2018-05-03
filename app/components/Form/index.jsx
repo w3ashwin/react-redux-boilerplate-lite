@@ -2,30 +2,32 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import uuidv1 from 'uuid';
-import { addArticle } from '../../actions/article';
+import actions from '../../actions/article';
 
 const mapDispatchToProps = dispatch => ({
-  addArticle: article => dispatch(addArticle(article)),
+  addArticle: article => dispatch(actions.addArticle(article))
 });
 
 class ConnectedForm extends Component {
   constructor() {
     super();
     this.state = {
-      title: '',
+      title: ''
     };
   }
 
-  handleChange = (event) => {
+  handleChange = event => {
     this.setState({ [event.target.id]: event.target.value });
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
     const { title } = this.state;
     const id = uuidv1();
-    this.props.addArticle({ title, id });
-    this.setState({ title: '' });
+    if (title) {
+      this.props.addArticle({ title, id });
+      this.setState({ title: '' });
+    }
   };
 
   render() {
@@ -33,7 +35,7 @@ class ConnectedForm extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="form-group">
-          <label htmlFor="title">Title</label>
+          <label htmlFor="title">Todo</label>
           <input
             type="text"
             className="form-control"
@@ -53,7 +55,7 @@ class ConnectedForm extends Component {
 const Form = connect(null, mapDispatchToProps)(ConnectedForm);
 
 ConnectedForm.propTypes = {
-  addArticle: PropTypes.func.isRequired,
+  addArticle: PropTypes.func.isRequired
 };
 
 export default Form;

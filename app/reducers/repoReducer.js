@@ -5,7 +5,7 @@ const initialState = fromJS({
   username: '',
   list: [],
   loading: false,
-  error: '',
+  error: ''
 });
 
 const demoReducer = (state = initialState, action) => {

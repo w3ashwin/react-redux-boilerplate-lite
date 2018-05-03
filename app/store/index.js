@@ -6,13 +6,13 @@ import saga from '../saga';
 
 const sagaMiddleware = createSagaMiddleware();
 const enhancers = [
-  applyMiddleware(sagaMiddleware),
+  applyMiddleware(sagaMiddleware)
 ];
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
   ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
     // Prevent recomputing reducers for `replaceReducer`
-    shouldHotReload: true,
+    shouldHotReload: true
   })
   : compose;
 

@@ -10,6 +10,83 @@
         "browser": true
     },
     "rules": {
+        "arrow-parens": [
+            "error",
+            "as-needed"
+        ],
+        "consistent-return": "off",
+        "global-require": "off",
+        "indent": [
+            "warn",
+             2,
+            {
+                "SwitchCase": 1,
+                "ignoredNodes": ["JSXElement", "JSXElement > *",
+                    "JSXAttribute", "JSXIdentifier", "JSXNamespacedName",
+                    "JSXMemberExpression", "JSXSpreadAttribute", "JSXExpressionContainer",
+                    "JSXOpeningElement", "JSXClosingElement", "JSXText", "JSXEmptyExpression",
+                    "JSXSpreadChild"]
+            }
+        ],
+        "no-tabs": 0,
+        "max-len": [
+            "error",
+            120,
+        {
+            "ignorePattern": "[^\\n\\r]{115,120}\\{(?:'|\") (?:'|\")\\}"
+        }
+        ],
+        "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1}],
+        "no-alert": "off",
+        "no-confusing-arrow": "off",
+        "no-console": "off",
+        "no-param-reassign": "off",
+        "prefer-template": "warn",
+        "iterators/generators": "off",
+        "react/forbid-prop-types": "off",
+        "react/jsx-no-target-blank": "off",
+        "react/no-multi-comp": [
+        "error",
+        {
+            "ignoreStateless": true
+        }
+        ],
+        "react/no-unescaped-entities": "off",
+        "react/prefer-stateless-function": "warn",
+        "import/default": "off",
+        "import/extensions": "off",
+        "import/no-extraneous-dependencies": "off",
+        "import/no-named-as-default": "error",
+        "import/no-unresolved": "off",
+        "strict":             [ 2, "safe" ],
+        "brace-style": [
+            2,
+            "1tbs",
+            { "allowSingleLine": true }
+        ],        
+        "no-trailing-spaces": 2,
+        "keyword-spacing":    2,
+        "space-before-function-paren": [
+            2,
+            "never"
+        ],
+        "spaced-comment":     [2, "always" ],
+        "vars-on-top":        2,
+        "no-undef":           2,
+        "no-undefined":       2,
+        "comma-dangle":       [ 2, "never" ],
+        "quotes":             [ 2, "single" ],
+        "semi":               [ 2, "always" ],        
+        "guard-for-in":       2,
+        "no-eval":            2,
+        "no-with":            2,
+        "valid-typeof":       2,
+        "no-unused-vars":     2,
+        "no-continue":        1,
+        "no-extra-semi":      1,
+        "no-unreachable":     1,
+        "no-unused-expressions": 1,
+        "react/prefer-es6-class": 1,
         "no-underscore-dangle": [
             "error",
             {

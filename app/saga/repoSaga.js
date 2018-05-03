@@ -17,5 +17,5 @@ function* fetchRepositories(action) {
 }
 
 module.exports = {
-  fetchRepositories,
+  fetchRepositories
 };

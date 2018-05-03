@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { fetchRepos } from '../../actions/Repos';
 
 class Repos extends React.Component {
-  handleChange = (event) => {
+  handleChange = event => {
     this.props.getRepositories(event.target.value);
   };
 
@@ -16,7 +16,7 @@ class Repos extends React.Component {
   render() {
     const { username } = this.props;
     return (
-      <div>
+      <div className="container">
         <label htmlFor="title">Git username</label>
         <input
           type="text"
@@ -36,21 +36,21 @@ Repos.propTypes = {
   username: PropTypes.string.isRequired,
   list: PropTypes.arrayOf(PropTypes.object).isRequired,
   getRepositories: PropTypes.func.isRequired,
-  error: PropTypes.string,
+  error: PropTypes.string
 };
 
 Repos.defaultProps = {
-  error: '',
+  error: ''
 };
 
 const mapDispatchToProps = dispatch => ({
-  getRepositories: username => dispatch(fetchRepos(username)),
+  getRepositories: username => dispatch(fetchRepos(username))
 });
 
 const mapStateToProps = state => ({
   username: state.demo.get('username'),
   list: state.demo.get('list'),
-  error: state.demo.get('error'),
+  error: state.demo.get('error')
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Repos);

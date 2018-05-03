@@ -1,0 +1,190 @@
+@import './variables.scss';
+
+@mixin box-shadow-bottom($bottomPixel) {
+    -webkit-box-shadow: 0 $bottomPixel 2px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 $bottomPixel 2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 $bottomPixel 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+@mixin box-shadow($width, $hor, $ver, $spread, $color) {
+    @if($width) {
+        -webkit-box-shadow: $width $hor $ver $spread $color;
+        -moz-box-shadow: $width $hor $ver $spread $color;
+        box-shadow: $width $hor $ver $spread $color;
+    }
+    @else {
+        -webkit-box-shadow: $hor $ver $spread $color;
+        -moz-box-shadow: $hor $ver $spread $color;
+        box-shadow: $hor $ver $spread $color;
+    }
+}
+
+@mixin hover-element($stateHoverTextColor) {
+    border-color: $stateHoverBorderColor;
+    background: $stateHoverBgColor;
+    color: $stateHoverTextColor;
+    a {
+        color: $stateHoverTextColor;
+    }
+}
+
+@mixin appearance($value) {
+    -webkit-appearance: $value;
+    -moz-appearance:    $value;
+    appearance:         $value;
+}
+
+@mixin no-scroll($element) {
+    $element::-webkit-scrollbar {display:none;}
+    $element::-moz-scrollbar {display:none;}
+    $element::-o-scrollbar {display:none;}
+    $element::-khtml-scrollbar {display:none;}
+}
+
+
+@mixin rotate-translate($deg, $from, $to) {
+    -webkit-transform: rotate($deg) translate($from, $to);
+    -moz-transform: rotate($deg) translate($from, $to);
+    -ms-transform: rotate($deg) translate($from, $to);
+    -o-transform: rotate($deg) translate($from, $to);
+    transform: rotate($deg) translate($from, $to);
+}
+
+@mixin translate($property, $delay, $type) {
+    @if($type) {
+        -webkit-transition: $property $delay $type;
+        -moz-transition: $property $delay $type;
+        transition: $property $delay $type;
+    }
+    @else {
+        -webkit-transition: $property $delay;
+        -moz-transition: $property $delay;
+        transition: $property $delay;
+    }
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin border-radius-full($top-left, $top-right, $bottom-right, $bottom-left) {
+    -webkit-border-radius: $top-left $top-right $bottom-right $bottom-left;
+    -moz-border-radius: $top-left $top-right $bottom-right $bottom-left;
+    -ms-border-radius: $top-left $top-right $bottom-right $bottom-left;
+    border-radius: $top-left $top-right $bottom-right $bottom-left;
+}
+
+@mixin push-auto {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+
+@mixin box($width, $height, $background) {
+    width: $width;
+    height: $height;
+    @if $background !='' {
+        background-color: $background;
+    }
+}
+
+@mixin background-gradient($start-color, $end-color, $orientation) {
+    background: $start-color;
+    @if $orientation=='vertical' {
+        background: -webkit-linear-gradient(top, $start-color, $end-color);
+        background: linear-gradient(to bottom, $start-color, $end-color);
+    }
+    @else if $orientation=='horizontal' {
+        background: -webkit-linear-gradient(left, $start-color, $end-color);
+        background: linear-gradient(to right, $start-color, $end-color);
+    }
+    @else {
+        background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+        background: radial-gradient(ellipse at center, $start-color, $end-color);
+    }
+}
+
+@mixin input-placeholder {
+    &.placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+@mixin square($size) {
+    width: $size;
+    height: $size;
+}
+
+@mixin m-l($size) {
+    margin-left: $size;
+}
+
+@mixin m-r($size) {
+    margin-right: $size;
+}
+
+@mixin m-t($size) {
+    margin-top: $size;
+}
+
+@mixin m-n($size) {
+    margin-bottom: $size;
+}
+
+@mixin tranisitionAll($delay) {
+    transition: all $delay ease-in-out;
+}
+
+/*
+Define animation name, and properties
+Example: @include keyframes(fade-out) {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0;
+    }
+}
+*/
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};
+}
+/* Example: @include animation('fade-out 5s 3');*/

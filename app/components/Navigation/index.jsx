@@ -4,13 +4,11 @@ import { Link } from 'react-router-dom';
 const Navigation = () => (
   <nav>
     <ul>
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/list">List</Link></li>
-      <li><Link to="/form">Form</Link></li>
-      <li><Link to="/repos">Repos</Link></li>
+      <li><Link to="/todo">Todo</Link></li>
+      <li><Link to="/repos">GitHub</Link></li>
+      <li><Link to="/">Logout</Link></li>
     </ul>
   </nav>
 );
-
 
 export default Navigation;
