@@ -7,6 +7,7 @@ Webpack 4 Boilerplate
 
 ## Requirements
 You only need <b>node.js</b> pre-installed and you’re good to go.
+please use node version >= 8.9.4.
 
 ## Setup
 Install dependencies
@@ -15,7 +16,7 @@ $ yarn install
 ```
 
 ## Development
-Run the local webpack-dev-server with livereload and autocompile on [http://localhost:8080/](http://localhost:8080/)
+Run the local webpack-dev-server with livereload and autocompile on [http://localhost:8081/](http://localhost:8081/)
 ```sh
 $ yarn dev
 ```
