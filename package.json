@@ -16,7 +16,7 @@
     "bootstrap": "4.1.1",
     "immutable": "^3.8.2",
     "jquery": "^3.3.1",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.11",
     "popper.js": "1.14.3",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
@@ -52,7 +52,7 @@
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.0.7",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.11.0",
     "postcss-loader": "^2.1.5",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
@@ -60,7 +60,7 @@
     "webpack": "^4.9.1",
     "webpack-bundle-analyzer": "^2.13.1",
     "webpack-cli": "^2.1.4",
-    "webpack-dev-server": "^3.1.4",
+    "webpack-dev-server": "^3.2.1",
     "webpack-merge": "^4.1.2"
   }
 }
