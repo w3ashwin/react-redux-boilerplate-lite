@@ -8,7 +8,9 @@
     "build": "webpack -p --progress --mode production --config webpack.config.build.js",
     "stats": "webpack --profile --json > stats.json",
     "lint": "eslint .",
-    "postdev": "npm run lint"
+    "postdev": "npm run lint",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -28,7 +30,8 @@
     "redux-saga": "^0.16.0",
     "tether": "^1.4.3",
     "ua-parser-js": "^0.7.18",
-    "uuid": "^3.2.1"
+    "uuid": "^3.2.1",
+    "snyk": "^1.161.1"
   },
   "devDependencies": {
     "autoprefixer": "^8.5.1",
@@ -62,5 +65,6 @@
     "webpack-cli": "^2.1.4",
     "webpack-dev-server": "^3.2.1",
     "webpack-merge": "^4.1.2"
-  }
+  },
+  "snyk": true
 }
