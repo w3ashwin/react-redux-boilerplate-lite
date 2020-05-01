@@ -8,14 +8,16 @@
     "build": "webpack -p --progress --mode production --config webpack.config.build.js",
     "stats": "webpack --profile --json > stats.json",
     "lint": "eslint .",
-    "postdev": "npm run lint"
+    "postdev": "npm run lint",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "4.3.1",
     "immutable": "^3.8.2",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "lodash": "^4.17.11",
     "popper.js": "1.14.3",
     "prop-types": "^15.6.1",
@@ -28,7 +30,8 @@
     "redux-saga": "^0.16.0",
     "tether": "^1.4.3",
     "ua-parser-js": "^0.7.18",
-    "uuid": "^3.2.1"
+    "uuid": "^3.2.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "autoprefixer": "^8.5.1",
@@ -62,5 +65,6 @@
     "webpack-cli": "^2.1.4",
     "webpack-dev-server": "^3.2.1",
     "webpack-merge": "^4.1.2"
-  }
+  },
+  "snyk": true
 }
