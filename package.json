@@ -27,7 +27,7 @@
     "redux": "^3.7.2",
     "redux-saga": "^0.16.0",
     "tether": "^1.4.3",
-    "ua-parser-js": "^0.7.18",
+    "ua-parser-js": "^0.7.22",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
